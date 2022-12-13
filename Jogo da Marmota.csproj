@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Jogo_da_Marmota</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Captura de tela 2022-12-13 134612.png" />
+    <None Remove="mole-3390830_960_720 %281%29-PhotoRoom.png-PhotoRoom.png" />
+    <None Remove="mole-3390830_960_720 %281%29.png" />
+    <None Remove="mole-3390830_960_720.webp" />
+    <None Remove="png-transparent-sign-cartoon-wooden-sign-angle-rectangle-cross-removebg-preview.png" />
+    <None Remove="png-transparent-sign-cartoon-wooden-sign-angle-rectangle-cross.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Captura de tela 2022-12-13 134612.png" />
+    <Resource Include="mole-3390830_960_720 (1)-PhotoRoom.png-PhotoRoom.png" />
+    <Resource Include="mole-3390830_960_720 (1).png" />
+    <Resource Include="mole-3390830_960_720.webp" />
+    <Resource Include="png-transparent-sign-cartoon-wooden-sign-angle-rectangle-cross-removebg-preview.png" />
+    <Resource Include="png-transparent-sign-cartoon-wooden-sign-angle-rectangle-cross.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

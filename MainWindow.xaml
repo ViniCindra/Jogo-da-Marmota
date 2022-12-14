@@ -11,10 +11,11 @@
         <Image x:Name="marmota5" HorizontalAlignment="Left" Height="183" Margin="458,153,0,0" VerticalAlignment="Top" Width="139" Source="/mole-3390830_960_720 (1)-PhotoRoom.png-PhotoRoom.png" MouseLeftButtonDown="marmota5_click" Visibility="Hidden"/>
         <Image x:Name="marmota4" HorizontalAlignment="Left" Height="183" Margin="197,153,0,0" VerticalAlignment="Top" Width="139" Source="/mole-3390830_960_720 (1)-PhotoRoom.png-PhotoRoom.png" MouseLeftButtonDown="marmota4_click" Visibility="Hidden"/>
         <Image x:Name="marmota3" HorizontalAlignment="Left" Height="183" Margin="528,-36,0,0" VerticalAlignment="Top" Width="138" Source="/mole-3390830_960_720 (1)-PhotoRoom.png-PhotoRoom.png" MouseLeftButtonDown="marmota3_click" Visibility="Hidden"/>
-        <Image x:Name="marmota2" HorizontalAlignment="Left" Height="183" Margin="319,-37,0,0" VerticalAlignment="Top" Width="139" Source="/mole-3390830_960_720 (1)-PhotoRoom.png-PhotoRoom.png" MouseLeftButtonDown="marmota2_click" Visibility="Visible"/>
+        <Image x:Name="marmota2" HorizontalAlignment="Left" Height="183" Margin="319,-37,0,0" VerticalAlignment="Top" Width="139" Source="/mole-3390830_960_720 (1)-PhotoRoom.png-PhotoRoom.png" MouseLeftButtonDown="marmota2_click" Visibility="Hidden"/>
         <Image x:Name="marmota1" HorizontalAlignment="Left" Height="183" Margin="111,-37,0,0" VerticalAlignment="Top" Width="139" Source="/mole-3390830_960_720 (1)-PhotoRoom.png-PhotoRoom.png" MouseLeftButtonDown="marmota1_click" Visibility="Hidden"/>
         <Image x:Name="placa_contador" HorizontalAlignment="Left" Height="203" Margin="-81,175,0,0" VerticalAlignment="Top" Width="318" Source="/png-transparent-sign-cartoon-wooden-sign-angle-rectangle-cross-removebg-preview.png"/>
         <TextBlock x:Name="contador" HorizontalAlignment="Left" Margin="12,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="125" FontSize="20" Foreground="White" TextAlignment="Center"/>
+        <Button x:Name="btn_jogar" Content="JOGAR" HorizontalAlignment="Center" VerticalAlignment="Center" Height="65" Width="124" FontSize="29" FontFamily="Artifakt Element Heavy" FontWeight="Normal" BorderBrush="{x:Null}" Background="#FFA05A2C" Foreground="#FFDCDADA" Click="click_jogar"/>
 
     </Grid>
 </Window>

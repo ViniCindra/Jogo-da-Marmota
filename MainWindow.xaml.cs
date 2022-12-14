@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,7 +28,33 @@ namespace Jogo_da_Marmota
         int escolhaComputador;
         int numeros = 0;
         List<int> aparecerMarmotas = new List<int>() { 1, 2, 3, 4, 5};
+        int tempo = 0;
+        Task task;
+        CancellationToken cancellationToken;
+        CancellationTokenSource tokenSource;
 
+        private void IniciarTaskContagem()
+        {
+            tokenSource = new CancellationTokenSource();
+            cancellationToken = tokenSource.Token;
+            task = IniciarContagem(tokenSource.Token);
+        }
+
+        private async Task IniciarContagem(CancellationToken token)
+        {
+            while (true)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                }
+                await Task.Delay(2000);
+
+                tempo++;
+            }
+        }
+        
         public void AparecerMarmota()
         {
             var rnd = new Random();
@@ -60,6 +87,8 @@ namespace Jogo_da_Marmota
             numeros += 1;
             contador.Text = numeros.ToString();
             AparecerMarmota();
+            tempo = 0;
+            
         }
 
         private void marmota2_click(object sender, MouseButtonEventArgs e)
@@ -68,6 +97,7 @@ namespace Jogo_da_Marmota
             numeros += 1;
             contador.Text = numeros.ToString();
             AparecerMarmota();
+            tempo = 0;
         }
 
         private void marmota3_click(object sender, MouseButtonEventArgs e)
@@ -76,6 +106,7 @@ namespace Jogo_da_Marmota
             numeros += 1;
             contador.Text = numeros.ToString();
             AparecerMarmota();
+            tempo = 0;
         }
 
         private void marmota4_click(object sender, MouseButtonEventArgs e)
@@ -84,6 +115,7 @@ namespace Jogo_da_Marmota
             numeros += 1;
             contador.Text = numeros.ToString();
             AparecerMarmota();
+            tempo = 0;
         }
 
         private void marmota5_click(object sender, MouseButtonEventArgs e)
@@ -92,7 +124,27 @@ namespace Jogo_da_Marmota
             numeros += 1;
             contador.Text = numeros.ToString();
             AparecerMarmota();
+            tempo = 0;
         }
-
+        private void Temporizador()
+        {
+            if (tempo == 2)
+            {
+                marmota1.Visibility = Visibility.Hidden;
+                marmota2.Visibility = Visibility.Hidden;
+                marmota3.Visibility = Visibility.Hidden;
+                marmota4.Visibility = Visibility.Hidden;
+                marmota5.Visibility = Visibility.Hidden;
+                AparecerMarmota();
+                tempo = 0;
+            }
+        }
+        private void click_jogar(object sender, RoutedEventArgs e)
+        {
+            btn_jogar.Visibility = Visibility.Hidden;
+            AparecerMarmota();
+            IniciarTaskContagem();
+            Temporizador();
+        }
     }
 }

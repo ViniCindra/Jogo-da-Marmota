@@ -49,9 +49,10 @@ namespace Jogo_da_Marmota
                 {
                     cancellationToken.ThrowIfCancellationRequested();
                 }
-                await Task.Delay(2000);
+                await Task.Delay(1000);
 
                 tempo++;
+
             }
         }
         
@@ -128,15 +129,15 @@ namespace Jogo_da_Marmota
         }
         private void Temporizador()
         {
-            if (tempo == 2)
-            {
-                marmota1.Visibility = Visibility.Hidden;
-                marmota2.Visibility = Visibility.Hidden;
-                marmota3.Visibility = Visibility.Hidden;
-                marmota4.Visibility = Visibility.Hidden;
-                marmota5.Visibility = Visibility.Hidden;
-                AparecerMarmota();
-                tempo = 0;
+                if (tempo == 2)
+                {
+                    marmota1.Visibility = Visibility.Hidden;
+                    marmota2.Visibility = Visibility.Hidden;
+                    marmota3.Visibility = Visibility.Hidden;
+                    marmota4.Visibility = Visibility.Hidden;
+                    marmota5.Visibility = Visibility.Hidden;
+                    AparecerMarmota();
+                    tempo = 0;
             }
         }
         private void click_jogar(object sender, RoutedEventArgs e)
